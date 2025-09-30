@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Love 💕</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Floating Hearts Background */
+        .hearts-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.3);
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Main Container */
+        .main-container {
+            position: relative;
+            z-index: 2;
+            min-height: 100vh;
+            padding: 20px 15px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .header h1 {
+            font-family: 'Dancing Script', cursive;
+            color: #fff;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #fff;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Tabs Navigation */
+        .tabs-nav {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 15px 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 1s ease 0.3s backwards;
+        }
+
+        .tabs-nav .nav-link {
+            color: #667eea;
+            border: none;
+            border-radius: 15px;
+            padding: 12px 15px;
+            margin: 5px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .tabs-nav .nav-link i {
+            display: block;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .tabs-nav .nav-link:hover {
+            background: rgba(102, 126, 234, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .tabs-nav .nav-link.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Tab Content */
+        .tab-content-area {
+            animation: fadeInUp 1s ease 0.6s backwards;
+        }
+
+        .tab-pane {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 25px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            min-height: 400px;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .tab-pane h2 {
+            font-family: 'Dancing Script', cursive;
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .tab-pane p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        /* Birthday Card */
+        .birthday-card {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .birthday-emoji {
+            font-size: 4rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .birthday-message {
+            margin-top: 20px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 15px;
+            color: #fff;
+            box-shadow: 0 5px 20px rgba(245, 87, 108, 0.3);
+        }
+
+        /* Special Feelings */
+        .feeling-item {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feeling-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .feeling-item i {
+            color: #f5576c;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .feeling-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        /* Future Plans */
+        .future-item {
+            background: rgba(102, 126, 234, 0.1);
+            border-left: 4px solid #667eea;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .future-item:hover {
+            background: rgba(102, 126, 234, 0.2);
+            transform: translateX(10px);
+        }
+
+        .future-item i {
+            color: #f5576c;
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+
+        /* Photo Gallery */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            padding: 10px 0;
+        }
+
+        .photo-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            aspect-ratio: 1;
+        }
+
+        .photo-item:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 3rem;
+        }
+
+        .upload-note {
+            text-align: center;
+            padding: 20px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            color: #667eea;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .header h1 {
+                font-size: 3.5rem;
+            }
+
+            .tabs-nav .nav-link {
+                font-size: 1rem;
+                padding: 15px 20px;
+            }
+
+            .tab-pane {
+                padding: 40px 35px;
+            }
+
+            .photo-gallery {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .main-container {
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Floating Hearts -->
+    <div class="hearts-container" id="heartsContainer"></div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Happy Birthday My Beautiful Queen 👑❤️</h1>
+            <p>On this special day I celebrate the gift of you in my life.
+                You turn my boring days into extraordinary moments
+                You’re not just my girlfriend you are my world my happiness and my forever. 💕</p>
+
+        </div>
+
+        <!-- Tabs Navigation -->
+        <ul class="nav nav-pills nav-fill tabs-nav" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="birthday-tab" data-bs-toggle="pill" data-bs-target="#birthday"
+                    type="button" role="tab">
+                    <i class="fas fa-gift"></i>
+                    My Birthday Queen 👑
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="special-tab" data-bs-toggle="pill" data-bs-target="#special" type="button"
+                    role="tab">
+                    <i class="fas fa-heart"></i>
+                    How You Make Me Feel 💖
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="future-tab" data-bs-toggle="pill" data-bs-target="#future" type="button"
+                    role="tab">
+                    <i class="fas fa-road"></i>
+                    Our Forever Journey 🛤️
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="anniversary-tab" data-bs-toggle="pill" data-bs-target="#anniversary"
+                    type="button" role="tab">
+                    <i class="fas fa-ring"></i>
+                    Our Beautiful 4-Month Journey ✨
+                </button>
+            </li>
+
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="photos-tab" data-bs-toggle="pill" data-bs-target="#photos" type="button"
+                    role="tab">
+                    <i class="fas fa-images"></i>
+                    Pieces of Me for You 📸❤️
+                </button>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content tab-content-area" id="myTabContent">
+            <!-- Birthday Wishes Tab -->
+            <div class="tab-pane fade show active" id="birthday" role="tabpanel">
+                <div class="birthday-card">
+                    <div class="birthday-emoji">🎂🎉🎁</div>
+                    <h2>Happy Birthday, My Beautiful Queen 👑❤️</h2>
+                    <div class="birthday-card">
+
+                        <div class="birthday-message">
+                            <p style="color: #fff; font-size: 1.1rem; margin-bottom: 15px;">
+                                my love today is the most special day the day when you came in this
+                                world from thatmoment everyhting became brighter warmer and more beautiful
+                                you give the brightness of this dark world you give the positivety
+                                of this nagitive world
+                            </p>
+                            <p style="color: #fff; font-size: 1.1rem; margin-bottom: 15px;">
+                                you deserve all the happiness success and dream to came true a
+                                person amazing as you should always best in the life your and
+                                amzing person your an amzing you deserve all happiness on your
+                                speical day my love
+                            </p>
+                            <p style="color: #fff; font-size: 1.1rem; margin-bottom: 15px;">
+                                you are not just love of my life your my life also the strongest woman i
+                                know courage your kindness and your strength and inspire me every single day
+                                and make me more fall toward you every single day your the best and i want to be the
+                                best for for my love
+                            </p>
+                            <p style="color: #fff; font-size: 1.1rem; margin-bottom: 15px;">
+                                i wish we could be together today and celebrate your birthday and also our
+                                4 month anniversary together and laughing hugging and making memories together
+                                i wish i could hug you and give you gift and cut cake together and do many more
+                                with you my love
+                            </p>
+                            <p style="color: #fff; font-size: 1.1rem; margin-bottom: 0;">
+                                you know my love i understand between us is alot of distance but trust
+                                me this distance is nothing when someone means everything i love youmore
+                                than my word i love you more than i said with my word i love you i cant
+                                ever expalin how much i love you
+                            </p>
+                        </div>
+
+
+                        <p style="margin-top: 20px; color: #667eea; font-weight: 600;">
+                            This little website is my gift to you a piece of my heart made only for you.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Special Feelings Tab -->
+            <div class="tab-pane fade" id="special" role="tabpanel">
+                <h2>The Way You Make My Heart Feel ❤️</h2>
+
+                <div class="feeling-item">
+                    <i class="fas fa-smile-beam"></i>
+                    <h4>How Your Words Make Me Happy</h4>
+                    <p> my love you know everytime i talk with you you make my whole day bright positive shine
+                        my love everytime i talk your smile your laugh you voice your words make me feel happy make
+                        me positive my love everything about you make my heart happy make me smile make me more
+                        fall towards you my love infact you bring sunshine in my life even on the darkerst day
+                        when im sick your word make me heal when i was low you word make me high when i was in
+                        sad mood your word make me happy when im in depression your word make me smile you word
+                        work for me medicine in every situation these make me happy my love
+
+                    </p>
+                </div>
+
+                <div class="feeling-item">
+                    <i class="fas fa-heart-circle"></i>
+                    <h4>You Understand Me</h4>
+                    <p>my darling you know me better than anyone else know me and you u nderstand me your understand
+                        my thaight you understand my feeling you undersatnd my dream with you infact when i dont tell
+                        anything and you still undersatnd that and try to no do that kind of thing again this type of
+                        understanding and effort make me feel so special and love i love you alot they way you
+                        understand me that make me for fall towards you my love
+                    </p>
+                </div>
+
+                <div class="feeling-item">
+                    <i class="fas fa-star"></i>
+                    <h4>You Inspire Me</h4>
+                    <p>you make me to be a better person every single day before i meet you i dont have
+                        this much dream i thaught like ok i do work marry with someone and just live life
+                        but now i have an dream you inspire me my love i have a goal in my life now im
+                        going to be a best person and make my wife happy and became a best couple and became
+                        a best family after when we have a kid became a best perrents and in this you inspire
+                        me alot my lovee you give me they way how life ahppy life my love tbh you make
+                        me better person me your kindness your strenght your beautiful soul inspire me to do
+                        workhard and chase my dreams you belive in me thats give me so much confidence
+                        i love you upir my everything my love
+
+                    </p>
+                </div>
+
+                <div class="feeling-item">
+                    <i class="fas fa-infinity"></i>
+                    <h4>You're My Everything</h4>
+                    <p> you know the distance not matter between pakistan to usa you make me feel close to you
+                        every single day infact you every msg every call every moment make me feel close to you
+                        every moment we share that precious for me you are my everything you became ssuch an
+                        important part of my life i cant imhgine my life with out you your my eveyrthing i
+                        dont want to lose you your my first true love who i want my forever no one else i want
+                        only you pleease dont love me my everything
+                    </p>
+                </div>
+            </div>
+
+            <!-- Future Plans Tab -->
+            <div class="tab-pane fade" id="future" role="tabpanel">
+                <h2>The Future I Dream With You 💖</h2>
+
+                <div class="future-item">
+                    <i class="fas fa-plane"></i>
+                    <h4>Meeting You In Person</h4>
+                    <p>
+                        i dream the day when i can finally hold your hand hold you in my arm hug you tightly
+                        and say your my love my everything i never let you go back after that day i dream the
+                        day when this long distance became 0 distance i dream that day i wish the day came soon
+                        im working hard on my self and working hard everyday to make our dream true this is my biggest
+                        wish my biggest dream to meet with you and hold you in my arm and hug you i love you
+                    </p>
+                </div>
+
+                <div class="future-item">
+                    <i class="fas fa-home-heart"></i>
+                    <h4>Building Our Life Together</h4>
+                    <p>
+                        i imagine to livig together sharing daily routine sharing daily moment with you
+                        cooking with you watching movie with you and creating beautifull momery with you
+                        i want wake up next to you every moring and be the reason you smile everyday
+                        and building a beautifull family wiith you and be a best parent for our
+                        children and build the example for other distance no matter if you loyal
+                        you can achieve that i rerally love you
+                    </p>
+                </div>
+
+                <div class="future-item">
+                    <i class="fas fa-globe"></i>
+                    <h4>Exploring The World</h4>
+                    <p>
+                        i want to traveol with you and explore with you new place and experience different
+                        cultures i want to show you pakistan and also explore usa with you every adventure
+                        became more adventure more beautifull because we will be together my love i wish
+                        we go Saudia Arab (thath black place where muslim go) with you and do umarah and haj
+                        i wish we explore more pakistan with you and enjoy life together and we also vist
+                        historical thing and enjoy out life together i try to do hard work and able to
+                        complete all our dreams i love you
+                    </p>
+                </div>
+
+                <div class="future-item">
+                    <i class="fas fa-rings-wedding"></i>
+                    <h4>Forever With You</h4>
+                    <p>
+                        my dream is to spend my entire life with you and to be there for you in every
+                        situation happy or sad and to support you and help you to complete your every dream
+                        and also build our dream together i want be forever with you no matter how hard the
+                        situation want be there with you and hold your hand and never let you go back
+                        i want when we dont have teeth at that time im there and give you soft food for
+                        eat my love it mean i want be old with you mean be wiht you forever i really
+                        love youy please dont leave me your my forver
+                    </p>
+                </div>
+
+                <div class="future-item">
+                    <i class="fas fa-heart-pulse"></i>
+                    <h4>Growing Together</h4>
+                    <p>i want we grow up together in our life we grow up together in our careers we grow up together
+                        in our realstionship i want we grow up together in all the situation i will support you in
+                        everything you do i support you all the time i want grow up together and i want be there with
+                        you when you need i want grow up together my love and when we became old like 70 year old couple
+                        i wnat be a same faizan for you i want no matter how old we are i will be always love you
+                        like this always lovee you your my every thing i love you
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- anniversary Tab -->
+            <div class="tab-pane fade" id="anniversary" role="tabpanel">
+                <h2>Our Beautiful 4-Month Journey ✨</h2>
+
+                <div class="feeling-item">
+                    <i class="fas fa-calendar-heart"></i>
+                    <h4>Four Months of Pure Love</h4>
+                    <p>my love this 4 month is incrediable months my love when we start this our new journey
+                        together every single day with you make me blessing my love from our first conversation
+                        to now you made my life so much brighter and fill it with so much love and ahppiness
+                        these 4 month the best 4 month of my life becaus ei meet with you i meet with my
+                        forever i meet who give me direction of my life and make me happiest person on the world
+                        thanku so much you support me alot in this 4 month and make me motivate to became a success
+                        person
+                    </p>
+                </div>
+
+                <div class="feeling-item">
+                    <i class="fas fa-heart-circle-check"></i>
+                    <h4>What These Months Have Taught Me</h4>
+                    <p>in this 4 month i have learned what is true love really mean what is true love what is deep
+                        love what is deep vampire lovee you teach me alot about love and teach me alot what is real Love
+                        you learned me the distance not matter when someone means everything to you i learned
+                        that your smile make my worest day convert in best day of my life l learned that i want
+                        to spend my entire life with you you teach me alot but you dont know about that my lovee
+                        but infact you teach me what is real love before you no one else give me this much love
+                        you only one who give me this much love i never want to lose you
+
+                    </p>
+                </div>
+
+                <div class="feeling-item">
+                    <i class="fas fa-infinity"></i>
+                    <h4>Here's to Forever</h4>
+                    <p>my beautifull queen you know this is just begining of our journey and this 4 months are
+                        just the start of our forever together i understand in this 4 month we have a good time
+                        and also have bad time but we handle that bad time very good way and i love that how we
+                        handle the situation and i also understand in this month you deal alot im sorry for that
+                        i wish i could be there and protect you my love i cant wait for all month and years
+                        spend my entire life with you i promise love you more with each passing day and
+                        support you always and make you the happiest woman in the world your my everything
+                        and im so thankfull for every single day wiht you i love you more than words can say
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- Photos Tab -->
+            <div class="tab-pane fade" id="photos" role="tabpanel">
+                <h2>Beautiful Memories 📸</h2>
+
+                <!-- <div class="upload-note">
+                    <i class="fas fa-info-circle"></i>
+                    <p style="margin: 10px 0 5px 0; font-weight: 600;">Add Your Photos Here!</p>
+                    <p style="margin: 0; font-size: 0.9rem;">Replace the placeholder images by uploading your
+                        photos
+                        to
+                        an image hosting service and updating the code.</p>
+                </div> -->
+
+                <div class="photo-gallery">
+
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/1.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/2.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/3.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/4.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/5.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/6.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/7.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/8.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/9.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/10.jpg" alt="img" />
+                        </div>
+                    </div>
+
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/11.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/12.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/13.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/14.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/15.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/16.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/17.jpeg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/18.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/19.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/20.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/21.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/22.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/23.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/24.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/25.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/26.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/27.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/28.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/29.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/30.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/31.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/32.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/33.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/34.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/35.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/36.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/37.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/38.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/39.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/40.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/41.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/42.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/43.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/44.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/45.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/46.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/47.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/48.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/49.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/50.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/51.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/52.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/53.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/54.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/55.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/56.png" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/57.png" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/58.png" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/59.png" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/60.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/61.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/62.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/63.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/64.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/65.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/66.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/67.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/68.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/69.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/70.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/71.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/72.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/73.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/74.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/75.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/76.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/77.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/78.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/79.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/80.jpg" alt="img" />
+                        </div>
+                    </div>
+
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/81.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/82.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/83.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/84.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/85.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/86.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/87.png" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/88.png" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/89.png" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/90.jpg" alt="img" />
+                        </div>
+                    </div>
+
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/91.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/92.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/93.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/94.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/95.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/96.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/97.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/98.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/99.jpg" alt="img" />
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">
+                            <img src="./img/100.jpg" alt="img" />
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- <p style="text-align: center; margin-top: 20px; color: #667eea; font-style: italic;">
+                    Every moment with you is a precious memory I'll treasure forever! 💕
+                </p> -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Create floating hearts
+        function createHeart() {
+            const heartsContainer = document.getElementById('heartsContainer');
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '💕';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+            heartsContainer.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 15000);
+        }
+
+        // Create hearts periodically
+        setInterval(createHeart, 800);
+
+        // Create initial hearts
+        for (let i = 0; i < 10; i++) {
+            setTimeout(createHeart, i * 100);
+        }
+
+        // Tab change animation
+        const tabButtons = document.querySelectorAll('.nav-link');
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const targetId = this.getAttribute('data-bs-target');
+                const targetPane = document.querySelector(targetId);
+                if (targetPane) {
+                    targetPane.style.animation = 'none';
+                    setTimeout(() => {
+                        targetPane.style.animation = 'slideIn 0.5s ease';
+                    }, 10);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
