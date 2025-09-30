@@ -8,7 +8,42 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:wght@400;600&display=swap');
+
+        /* CSS Variables for Theme Colors */
+        :root {
+            /* Primary Colors */
+            --primary-dark: #1a0004;
+            --primary-medium: #2b0a12;
+            --primary-light: #3d0d1a;
+
+            /* Accent Colors */
+            --accent-primary: #b11226;
+            /* deep crimson */
+            --accent-secondary: #660000;
+            --accent-highlight: #ff4d6d;
+
+            /* Text Colors */
+            --text-primary: #f5e1e1;
+            --text-secondary: #e0b3b3;
+            --text-muted: #a67c7c;
+
+            /* Background Colors */
+            --bg-primary: rgba(15, 0, 5, 0.95);
+            --bg-secondary: rgba(30, 5, 15, 0.85);
+            --bg-gradient: linear-gradient(135deg, #1a0004, #3d0d1a);
+
+            /* Border Colors */
+            --border-primary: #660000;
+            --border-accent: #b11226;
+            --border-highlight: #ff4d6d;
+
+            /* Shadow Colors */
+            --shadow-dark: rgba(0, 0, 0, 0.85);
+            --shadow-medium: rgba(97, 0, 12, 0.7);
+            --shadow-light: rgba(255, 77, 109, 0.3);
+        }
+
 
         * {
             margin: 0;
@@ -17,10 +52,23 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            font-family: 'Crimson Text', serif;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-medium) 50%, var(--primary-light) 100%);
             min-height: 100vh;
             overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
         }
 
         /* Floating Hearts Background */
@@ -38,8 +86,9 @@
         .heart {
             position: absolute;
             font-size: 20px;
-            color: rgba(255, 255, 255, 0.3);
+            color: rgba(139, 0, 0, 0.4);
             animation: float 15s infinite;
+            filter: drop-shadow(0 0 5px var(--shadow-accent));
         }
 
         @keyframes float {
@@ -78,32 +127,35 @@
         }
 
         .header h1 {
-            font-family: 'Dancing Script', cursive;
-            color: #fff;
+            font-family: 'Cinzel', serif;
+            color: var(--text-primary);
             font-size: 2.5rem;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            text-shadow: 0 0 10px var(--shadow-accent), 2px 2px 10px var(--shadow-dark);
             margin-bottom: 10px;
+            letter-spacing: 2px;
         }
 
         .header p {
-            color: #fff;
+            color: var(--text-secondary);
             font-size: 1rem;
             opacity: 0.9;
+            text-shadow: 1px 1px 5px var(--shadow-dark);
         }
 
         /* Tabs Navigation */
         .tabs-nav {
-            background: rgba(255, 255, 255, 0.95);
+            background: var(--bg-primary);
+            border: 2px solid var(--accent-primary);
             border-radius: 20px;
             padding: 15px 10px;
             margin-bottom: 25px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px var(--shadow-light), inset 0 0 20px rgba(139, 0, 0, 0.2);
             animation: fadeInUp 1s ease 0.3s backwards;
         }
 
         .tabs-nav .nav-link {
-            color: #667eea;
-            border: none;
+            color: var(--text-secondary);
+            border: 1px solid transparent;
             border-radius: 15px;
             padding: 12px 15px;
             margin: 5px;
@@ -111,23 +163,28 @@
             font-size: 0.85rem;
             transition: all 0.3s ease;
             text-align: center;
+            text-shadow: 1px 1px 3px var(--shadow-dark);
         }
 
         .tabs-nav .nav-link i {
             display: block;
             font-size: 1.5rem;
             margin-bottom: 5px;
+            filter: drop-shadow(0 0 5px var(--shadow-accent));
         }
 
         .tabs-nav .nav-link:hover {
-            background: rgba(102, 126, 234, 0.1);
+            background: rgba(139, 0, 0, 0.2);
+            border-color: var(--accent-primary);
             transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(139, 0, 0, 0.4);
         }
 
         .tabs-nav .nav-link.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #fff;
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+            color: var(--text-primary);
+            border-color: var(--accent-highlight);
+            box-shadow: 0 5px 15px rgba(139, 0, 0, 0.6), inset 0 0 10px rgba(255, 107, 107, 0.3);
         }
 
         /* Tab Content */
@@ -136,10 +193,11 @@
         }
 
         .tab-pane {
-            background: rgba(255, 255, 255, 0.95);
+            background: var(--bg-primary);
+            border: 2px solid var(--border-primary);
             border-radius: 20px;
             padding: 25px 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px var(--shadow-medium), inset 0 0 30px rgba(139, 0, 0, 0.1);
             min-height: 400px;
             animation: slideIn 0.5s ease;
         }
@@ -157,18 +215,21 @@
         }
 
         .tab-pane h2 {
-            font-family: 'Dancing Script', cursive;
-            color: #667eea;
+            font-family: 'Cinzel', serif;
+            color: var(--text-primary);
             font-size: 2rem;
             margin-bottom: 20px;
             text-align: center;
+            text-shadow: 0 0 10px var(--shadow-accent);
+            letter-spacing: 1px;
         }
 
         .tab-pane p {
-            color: #555;
+            color: var(--text-secondary);
             line-height: 1.8;
             font-size: 1rem;
             margin-bottom: 15px;
+            text-shadow: 1px 1px 3px var(--shadow-dark);
         }
 
         /* Birthday Card */
@@ -180,6 +241,7 @@
         .birthday-emoji {
             font-size: 4rem;
             animation: bounce 2s infinite;
+            filter: drop-shadow(0 0 10px var(--shadow-accent));
         }
 
         @keyframes bounce {
@@ -197,57 +259,74 @@
         .birthday-message {
             margin-top: 20px;
             padding: 20px;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+            border: 2px solid var(--accent-highlight);
             border-radius: 15px;
-            color: #fff;
-            box-shadow: 0 5px 20px rgba(245, 87, 108, 0.3);
+            color: var(--text-primary);
+            box-shadow: 0 5px 20px var(--shadow-accent), inset 0 0 20px rgba(255, 107, 107, 0.1);
         }
 
         /* Special Feelings */
         .feeling-item {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-gradient) 100%);
+            border: 2px solid var(--border-primary);
             border-radius: 15px;
             padding: 20px;
             margin-bottom: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px var(--shadow-light), inset 0 0 20px rgba(139, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
 
         .feeling-item:hover {
             transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 25px rgba(139, 0, 0, 0.6), inset 0 0 30px rgba(139, 0, 0, 0.2);
+            border-color: var(--border-accent);
         }
 
         .feeling-item i {
-            color: #f5576c;
+            color: var(--accent-highlight);
             font-size: 2rem;
             margin-bottom: 10px;
+            filter: drop-shadow(0 0 10px var(--shadow-accent));
         }
 
         .feeling-item h4 {
-            color: #667eea;
+            color: var(--text-primary);
             margin-bottom: 10px;
+            text-shadow: 0 0 5px var(--shadow-accent);
         }
 
         /* Future Plans */
         .future-item {
-            background: rgba(102, 126, 234, 0.1);
-            border-left: 4px solid #667eea;
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--accent-primary);
             border-radius: 10px;
             padding: 20px;
             margin-bottom: 15px;
             transition: all 0.3s ease;
+            box-shadow: 0 3px 10px var(--shadow-light);
         }
 
         .future-item:hover {
-            background: rgba(102, 126, 234, 0.2);
+            background: rgba(139, 0, 0, 0.2);
             transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(139, 0, 0, 0.4);
         }
 
         .future-item i {
-            color: #f5576c;
+            color: var(--accent-highlight);
             font-size: 1.5rem;
             margin-right: 10px;
+            filter: drop-shadow(0 0 5px var(--shadow-accent));
+        }
+
+        .future-item h4 {
+            color: var(--text-primary);
+            text-shadow: 0 0 5px rgba(139, 0, 0, 0.3);
+        }
+
+        .future-item p {
+            color: var(--text-secondary);
         }
 
         /* Photo Gallery */
@@ -262,7 +341,8 @@
             position: relative;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 2px solid var(--border-primary);
+            box-shadow: 0 5px 15px var(--shadow-medium);
             cursor: pointer;
             transition: all 0.3s ease;
             aspect-ratio: 1;
@@ -270,33 +350,37 @@
 
         .photo-item:hover {
             transform: scale(1.05) rotate(2deg);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 25px rgba(139, 0, 0, 0.8);
+            border-color: var(--border-accent);
         }
 
         .photo-item img {
             width: 100%;
             height: 100%;
             object-fit: contain;
+            filter: sepia(0.2) contrast(1.1);
         }
 
         .photo-placeholder {
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 50%, #2a0000 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #fff;
+            color: var(--text-primary);
             font-size: 3rem;
         }
 
         .upload-note {
             text-align: center;
             padding: 20px;
-            background: rgba(102, 126, 234, 0.1);
+            background: rgba(139, 0, 0, 0.2);
+            border: 2px solid var(--border-primary);
             border-radius: 15px;
             margin-bottom: 20px;
-            color: #667eea;
+            color: var(--text-primary);
+            text-shadow: 1px 1px 3px var(--shadow-dark);
         }
 
         /* Animations */
@@ -1207,5 +1291,3 @@
 </body>
 
 </html>
-
-
